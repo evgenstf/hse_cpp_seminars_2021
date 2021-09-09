@@ -57,3 +57,9 @@ git -- система контроля версий
 
 
 `git commit -b <branch_name>`
+
+## Смерджить бранч в main(master)
+
+`git checkout master`
+`git merge <branch_name>`
+`git push`
