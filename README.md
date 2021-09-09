@@ -1,1 +1,3 @@
-# hse_cpp_seminars_2021
+Семинарист: Евгений Казаков
+
+tg: @evgenstf_work
