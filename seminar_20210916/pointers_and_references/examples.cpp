@@ -27,4 +27,8 @@ int main() {
 
   std::string** ptr_to_ptr = &ptr;
   std::cout << "ptr_to_ptr: " << ptr_to_ptr << std::endl; // address of pointer to object
+
+
+  char* ptr_char = object.data();
+  std::cout << ptr_char[0] << ptr_char[1] << ptr_char[2] << std::endl;
 }
