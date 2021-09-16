@@ -1,0 +1,9 @@
+// article to read: https://www.educative.io/edpresso/differences-between-pointers-and-references-in-cpp
+
+#include <string>
+
+int main() {
+  std::string object = "string";
+
+  std::string& reference = object;  // alias to object. we can change object using this reference
+}
