@@ -1,6 +1,7 @@
 #include <utility>
 #include <iostream>
 #include <string>
+#include <typeinfo>
 
 template<typename T>
 void print_type(T x) {
@@ -52,7 +53,6 @@ int main() {
 
   decltype(const_ref_str) copy_str3 = const_ref_str;  // decltype do capture references and consts
   static_assert(std::is_same_v<decltype(copy_str3), const std::string&>);
-
 
   return 0;
 }
