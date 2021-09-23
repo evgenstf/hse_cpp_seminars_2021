@@ -1,18 +1,14 @@
 #include <iostream>
 #include <cstdio>
 #include <fstream>
+#include <string>
 
+#include "print.h"
 
 using namespace std;
 
-
-template<typename T>
-void func(const T& x) {
-  cout << x << endl;
-}
-
 int main() {
-  func(1);
-  func("str");
-  func(1.1);
+  print(1);
+  print(std::string("str"));
+  print(1.1);
 }

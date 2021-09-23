@@ -1,1 +1,1 @@
-g++ -std=c++17 examples.cpp && ./a.out
+g++ -std=c++17 examples.cpp print.cpp && ./a.out
