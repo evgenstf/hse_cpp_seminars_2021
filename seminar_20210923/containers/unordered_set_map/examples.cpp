@@ -11,7 +11,7 @@ struct Hasher {
   size_t operator()(const pair<int, int>& x) const {
     size_t first = x.first;
     size_t second = x.second;
-    return (first << sizeof(first)) | second;
+    return (first << sizeof(second)) | second;
   }
 };
 
@@ -28,7 +28,6 @@ struct AlwaysEqual {
 };
 
 int main() {
-  cout << "    s: \n";
   unordered_set<pair<int, int>, Hasher> s;
   s.emplace(4, 1);
   s.emplace(5, 12);
@@ -37,29 +36,31 @@ int main() {
   s.emplace(8, 23);
   s.emplace(9, 234);
 
-
   for (auto [first, second] : s) {
     cout << first << ' ' << second << endl;
   }
 
   cout << " s bucket count: " << s.bucket_count() << endl;
 
-  cout << "    s2: \n";
-
-  unordered_set<pair<int, int>, BrokenHasher, AlwaysEqual> s2;
-  s2.emplace(4, 1);
-  s2.emplace(5, 12);
-  s2.emplace(6, 123);
-  s2.emplace(7, 2);
-  s2.emplace(8, 23);
-  s2.emplace(9, 234);
+  cout << " s load factor: " << s.load_factor() << endl;
+  cout << " s max load factor: " << s.max_load_factor() << endl;
 
 
-  for (auto [first, second] : s2) {
-    cout << first << ' ' << second << endl;
-  }
-  cout << " s2 bucket count: " << s2.bucket_count() << endl;
-  s2.rehash(5);
-  cout << " after rehash: " << s2.bucket_count() << endl;
-
+//  unordered_set<pair<int, int>, BrokenHasher, AlwaysEqual> s2;
+//  s2.emplace(4, 1);
+//  s2.emplace(5, 12);
+//  s2.emplace(6, 123);
+//  s2.emplace(7, 2);
+//  s2.emplace(8, 23);
+//  s2.emplace(9, 234);
+//
+//
+//  cout << "    s2: \n";
+//  for (auto [first, second] : s2) {
+//   cout << first << ' ' << second << endl;
+//  }
+//
+//  cout << " s2 bucket count: " << s2.bucket_count() << endl;
+//  s2.rehash(5);
+//  cout << " after rehash: " << s2.bucket_count() << endl;
 }

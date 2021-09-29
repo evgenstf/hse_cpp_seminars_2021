@@ -36,13 +36,13 @@ int main() {
 
   {
     ofstream file;
-    file.open("parent_b.bin", ios::out | ios::binary);
+    file.open("child_b.bin", ios::out | ios::binary);
     file.write(reinterpret_cast<char*>(&b), sizeof(b));
   }
 
   {
     ofstream file;
-    file.open("parent_c.bin", ios::out | ios::binary);
+    file.open("child_c.bin", ios::out | ios::binary);
     file.write(reinterpret_cast<char*>(&c), sizeof(c));
   }
 }

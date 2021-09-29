@@ -9,11 +9,20 @@ using namespace std;
 
 struct Less {
   bool operator()(const int lhs, const int rhs) const {
+    ++cnt;
     return to_string(lhs) < to_string(rhs);
   }
+
+  mutable int cnt;
+
 };
 
 int main() {
+  Less less_comparator;
+
+  less_comparator.cnt = 0;
+
+
   set<int, Less> s;
   s.insert(1);
   s.insert(12);
@@ -27,6 +36,7 @@ int main() {
     cout << x << endl;
   }
 
+  cout << "compares count: " << less_comparator.cnt << endl;
 
   auto iterator = s.begin();
 
@@ -41,10 +51,12 @@ int main() {
 
   s2.merge(s);
 
+
   for (auto x : s2) {
     cout << x << ' ';
   }
   cout << endl;
+
 
 
   auto exists_it = s2.find(3);
@@ -53,13 +65,20 @@ int main() {
 
 
   multiset<int> s3 = {2, 3, 3, 4};
+  //                     ^     ^
+  //                     lb    ub
 
   auto first_x_it = s3.lower_bound(3); // first 3
   auto next_after_x_it = s3.upper_bound(3); // 4
 
 
+  cout << "3 count: " << s3.count(3) << endl;
+
+
+
   map<string, int> m = {{"a", 1}, {"b", 2}};
 
+  cout << "map: \n";
   for (auto [key, value]: m) {
     cout << key << ' ' << value << endl;
   }
