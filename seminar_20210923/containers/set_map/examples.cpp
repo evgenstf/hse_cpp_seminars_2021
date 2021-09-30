@@ -13,16 +13,10 @@ struct Less {
     return to_string(lhs) < to_string(rhs);
   }
 
-  mutable int cnt;
-
+  mutable int cnt = 0;
 };
 
 int main() {
-  Less less_comparator;
-
-  less_comparator.cnt = 0;
-
-
   set<int, Less> s;
   s.insert(1);
   s.insert(12);
@@ -32,11 +26,9 @@ int main() {
   s.insert(234);
 
 
-  for (auto x : s) {
-    cout << x << endl;
-  }
+  auto comparator = s.key_comp();
 
-  cout << "compares count: " << less_comparator.cnt << endl;
+  cout << "compares count: " << comparator.cnt << endl;
 
   auto iterator = s.begin();
 

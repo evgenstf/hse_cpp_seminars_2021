@@ -45,6 +45,7 @@ int main() {
   }
 
 
+  std::cout << std::endl;
   std::cout << "weak ptr: \n";
   {
     shared_ptr<Class> pointer = make_shared<Class>();

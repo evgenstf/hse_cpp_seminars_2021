@@ -25,8 +25,6 @@ public:
 };
 
 
-
-
 class VParentA {
 public:
   virtual ~VParentA() {
