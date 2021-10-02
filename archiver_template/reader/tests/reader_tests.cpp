@@ -18,6 +18,8 @@ TEST(Reader, ReadBinaryFile) {
     auto read_byte = reader.read_next_byte();
     ASSERT_EQ(read_byte, expected_data[i]);
   }
+
+  ASSERT_FALSE(reader.has_next_byte());
 }
 
 int main(int argc, char** argv) {

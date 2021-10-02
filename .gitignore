@@ -1,3 +1,8 @@
 build
 *.out
 *.o
+
+#For CLion
+cmake-build-debug
+cmake-build-release
+.idea
